@@ -1,44 +1,47 @@
-/* src/styles/Hero.css */
+/* src/styles/Hero.css - Full Replacement */
 
 .hero {
-    /* Background Image setup remains the same */
+    /* Background setup */
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/hero-group-photo.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    min-height: 80vh; 
+    
+    /* Full screen height */
+    min-height: 100vh; 
+    
+    /* Flexbox for content alignment */
     display: flex;
-    align-items: center; 
-    justify-content: flex-start;
-    padding: 0 5%;
+    align-items: center; /* Vertically center content */
+    justify-content: flex-start; /* Align content to the left */
+    padding: 0 5%; /* Horizontal padding */
 }
 
 .hero-content {
     max-width: 600px;
-    padding: 40px;
-    color: white; /* Keep white for visibility over the dark photo */
+    padding: 40px 0; /* Vertical padding inside the content box */
+    color: white; /* Text color over the dark background */
     z-index: 10;
 }
 
-/* --- TEXT COLORS: Using a dark purple/maroon accent for contrast --- */
+/* --- Text Styles --- */
 
 .hero-title {
     font-size: 3.5rem; 
     margin-bottom: 0.5rem;
     font-weight: 700;
-    /* Optional: Use a light version of the purple or keep white for maximum contrast */
-    color: #f0f0f0; /* Near white for the main title */
+    color: #ffffff; /* Keep main title white for contrast */
 }
 
 .hero-subtitle {
     font-size: 1.5rem;
     margin-bottom: 2rem;
     line-height: 1.5;
-    /* Optional: Use the logo's purple text color here, or keep white */
-    color: #d1c4e9; /* A softer white/light purple for the subtitle */
+    /* Using a light secondary color (off-white/light-purple) */
+    color: #d1c4e9; 
 }
 
-/* --- BUTTON STYLES: Using the logo's Red --- */
+/* --- Button Styles: Using Logo Red --- */
 
 .hero-cta-buttons {
     display: flex;
@@ -46,8 +49,8 @@
 }
 
 .cta-primary {
-    /* Primary CTA Button: Use the Logo's Primary Red */
-    background-color: #D32F2F; /* A strong, deep red */
+    /* Primary CTA: Deep Red from Logo */
+    background-color: #D32F2F; 
     color: white;
     padding: 12px 30px;
     border: none;
@@ -59,11 +62,11 @@
 }
 
 .cta-primary:hover {
-    background-color: #B71C1C; /* Slightly darker red on hover */
+    background-color: #B71C1C; /* Darker Red on hover */
 }
 
 .cta-secondary {
-    /* Secondary Button: White outline, Red text (or white for readability) */
+    /* Secondary Button: White outline for contrast */
     background-color: transparent; 
     color: white;
     padding: 12px 30px;
@@ -76,7 +79,7 @@
 }
 
 .cta-secondary:hover {
-    /* Optional: Fill with Red on hover */
+    /* Fill with Red on hover for branding */
     background-color: #D32F2F;
     border-color: #D32F2F;
 }
