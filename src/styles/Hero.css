@@ -1,56 +1,53 @@
 /* src/styles/Hero.css */
 
 .hero {
-    /* Set the group photo as the background */
+    /* Background Image setup remains the same */
     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/hero-group-photo.jpg');
-    
-    /* Ensure the background covers the entire section */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    
-    /* Set a minimum height for the section */
     min-height: 80vh; 
-    
-    /* Center the content vertically and horizontally */
     display: flex;
-    align-items: center; /* Vertically center */
-    justify-content: flex-start; /* Place content on the left (adjust as needed) */
-    
-    /* Add padding for spacing */
+    align-items: center; 
+    justify-content: flex-start;
     padding: 0 5%;
 }
 
 .hero-content {
-    /* Style the text overlay box */
     max-width: 600px;
     padding: 40px;
-    color: white; /* Ensure text is visible over the dark photo */
-    z-index: 10; /* Keep content above the background image */
+    color: white; /* Keep white for visibility over the dark photo */
+    z-index: 10;
 }
 
-/* Styles for the headline and subtitle */
+/* --- TEXT COLORS: Using a dark purple/maroon accent for contrast --- */
+
 .hero-title {
-    font-size: 3.5rem; /* Larger font for impact */
+    font-size: 3.5rem; 
     margin-bottom: 0.5rem;
     font-weight: 700;
+    /* Optional: Use a light version of the purple or keep white for maximum contrast */
+    color: #f0f0f0; /* Near white for the main title */
 }
 
 .hero-subtitle {
     font-size: 1.5rem;
     margin-bottom: 2rem;
     line-height: 1.5;
+    /* Optional: Use the logo's purple text color here, or keep white */
+    color: #d1c4e9; /* A softer white/light purple for the subtitle */
 }
 
-/* Style the buttons */
+/* --- BUTTON STYLES: Using the logo's Red --- */
+
 .hero-cta-buttons {
     display: flex;
     gap: 15px;
 }
 
 .cta-primary {
-    /* Use the prominent orange color from the example */
-    background-color: #ff5722; 
+    /* Primary CTA Button: Use the Logo's Primary Red */
+    background-color: #D32F2F; /* A strong, deep red */
     color: white;
     padding: 12px 30px;
     border: none;
@@ -58,10 +55,15 @@
     font-size: 1rem;
     font-weight: 600;
     border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.cta-primary:hover {
+    background-color: #B71C1C; /* Slightly darker red on hover */
 }
 
 .cta-secondary {
-    /* Transparent or outlined style for the 'Read More' button */
+    /* Secondary Button: White outline, Red text (or white for readability) */
     background-color: transparent; 
     color: white;
     padding: 12px 30px;
@@ -70,4 +72,11 @@
     font-size: 1rem;
     font-weight: 600;
     border-radius: 5px;
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+.cta-secondary:hover {
+    /* Optional: Fill with Red on hover */
+    background-color: #D32F2F;
+    border-color: #D32F2F;
 }
