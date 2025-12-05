@@ -55,11 +55,11 @@ const Footer = () => {
           <div className="footer-contact">
             <p className="contact-item">
               <FaEnvelope aria-label="Email icon" /> 
-              <a href="mailto:contact@beyondthecycle.org">contact@beyondthecycle.org</a>
+              <a href="mailto:">beyondthecyclenet1@gmail.com</a>
             </p>
             <p className="contact-item">
               <span role="img" aria-label="Location">📍</span> 
-              [Your Campus Address]
+              0794375449
             </p>
             <p className="contact-item">
               <a href="/whistleblower" aria-label="Whistleblower Policy">
