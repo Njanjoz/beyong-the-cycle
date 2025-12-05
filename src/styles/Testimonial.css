@@ -1,0 +1,48 @@
+.testimonial {
+  padding: 5rem 2rem;
+  background-color: #f8f9fa;
+}
+
+.testimonial-container {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  background: white;
+  border-radius: 15px;
+  padding: 3rem;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-image {
+  flex: 0 0 150px;
+}
+
+.testimonial-image img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #4ECDC4;
+}
+
+.testimonial-content {
+  flex: 1;
+}
+
+.testimonial-content blockquote {
+  font-size: 1.5rem;
+  font-style: italic;
+  color: #2c3e50;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.testimonial-content cite {
+  display: block;
+  font-size: 1rem;
+  color: #7f8c8d;
+  font-style: normal;
+  font-weight: 600;
+}

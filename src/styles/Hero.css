@@ -1,0 +1,73 @@
+/* src/styles/Hero.css */
+
+.hero {
+    /* Set the group photo as the background */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/images/hero-group-photo.jpg');
+    
+    /* Ensure the background covers the entire section */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* Set a minimum height for the section */
+    min-height: 80vh; 
+    
+    /* Center the content vertically and horizontally */
+    display: flex;
+    align-items: center; /* Vertically center */
+    justify-content: flex-start; /* Place content on the left (adjust as needed) */
+    
+    /* Add padding for spacing */
+    padding: 0 5%;
+}
+
+.hero-content {
+    /* Style the text overlay box */
+    max-width: 600px;
+    padding: 40px;
+    color: white; /* Ensure text is visible over the dark photo */
+    z-index: 10; /* Keep content above the background image */
+}
+
+/* Styles for the headline and subtitle */
+.hero-title {
+    font-size: 3.5rem; /* Larger font for impact */
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    line-height: 1.5;
+}
+
+/* Style the buttons */
+.hero-cta-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.cta-primary {
+    /* Use the prominent orange color from the example */
+    background-color: #ff5722; 
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 5px;
+}
+
+.cta-secondary {
+    /* Transparent or outlined style for the 'Read More' button */
+    background-color: transparent; 
+    color: white;
+    padding: 12px 30px;
+    border: 2px solid white;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 5px;
+}
