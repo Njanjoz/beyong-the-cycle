@@ -1,41 +1,121 @@
+/* ============================================
+   ABOUT SECTION - LUXURY RESPONSIVE
+   ============================================ */
+
 .about {
-  padding: 5rem 2rem;
-  background-color: white;
+  padding: clamp(3rem, 10vw, 6rem) clamp(1rem, 5vw, 3rem);
+  background-color: var(--white);
+  border-bottom: 1px solid var(--border-light);
 }
 
 .about-container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 5vw, 4rem);
   align-items: center;
-  gap: 4rem;
 }
 
 .about-text {
   flex: 1;
+  animation: fadeInLeft 0.8s ease-out;
 }
 
 .about-text h2 {
-  font-size: 2.5rem;
-  color: #2c3e50;
-  margin-bottom: 1.5rem;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  color: var(--text-dark);
+  margin-bottom: clamp(1rem, 2vw, 1.5rem);
+  letter-spacing: 1px;
 }
 
 .about-text p {
-  font-size: 1.1rem;
-  color: #555;
-  line-height: 1.8;
+  font-family: 'Lato', sans-serif;
+  font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+  color: var(--text-light);
+  line-height: 1.9;
+  margin-bottom: 1.5rem;
+}
+
+.about-text p:last-child {
+  margin-bottom: 0;
 }
 
 .about-image {
   flex: 1;
-  border-radius: 10px;
+  border-radius: 0;
   overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  animation: fadeInRight 0.8s ease-out;
 }
 
 .about-image img {
   width: 100%;
-  height: 350px;
+  height: clamp(300px, 50vw, 450px);
   object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.about-image:hover img {
+  transform: scale(1.05);
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Tablet (768px and below) */
+@media (max-width: 768px) {
+  .about-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .about-text h2 {
+    font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+  }
+
+  .about-image img {
+    height: clamp(250px, 60vw, 400px);
+  }
+}
+
+/* Mobile (480px and below) */
+@media (max-width: 480px) {
+  .about {
+    padding: 2rem 1rem;
+  }
+
+  .about-text h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .about-text p {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+  }
+
+  .about-image img {
+    height: 250px;
+  }
 }
