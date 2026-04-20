@@ -1,6 +1,15 @@
 /* ============================================
-   LUXURY HEADER - RESPONSIVE
+   LUXURY HEADER - RESPONSIVE WITH LOGIN & PROFILE
    ============================================ */
+
+:root {
+  --primary-black: #1a1a1a;
+  --white: #ffffff;
+  --gold: #d4af37;
+  --text-dark: #333333;
+  --border-light: #e8e8e8;
+  --light-bg: #f9f9f9;
+}
 
 .header {
   background-color: var(--white);
@@ -49,6 +58,17 @@
   letter-spacing: 1px;
   color: var(--primary-black);
   white-space: nowrap;
+}
+
+.brand-name-mobile {
+  display: none;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--primary-black);
+  flex: 1;
+  text-align: center;
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
 }
 
 /* Navigation Menu */
@@ -110,25 +130,248 @@
   transform: translateY(-2px);
 }
 
-/* Mobile Menu Icon (for future mobile nav) */
+.logout-btn {
+  background-color: transparent;
+  color: var(--primary-black);
+  border: 2px solid var(--primary-black);
+  padding: clamp(0.6rem, 1.5vw, 0.8rem) clamp(1rem, 2vw, 1.5rem);
+  border-radius: 0;
+  font-size: clamp(0.8rem, 0.9vw, 0.9rem);
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+  background-color: var(--primary-black);
+  color: var(--white);
+}
+
+/* Header Actions - Login & Profile */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-shrink: 0;
+}
+
+.login-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: transparent;
+  border: 2px solid var(--primary-black);
+  color: var(--primary-black);
+  padding: 0.6rem 1rem;
+  border-radius: 0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.login-btn:hover {
+  background-color: var(--primary-black);
+  color: var(--white);
+}
+
+.login-text {
+  display: inline;
+}
+
+.profile-section {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.profile-icon {
+  width: 40px;
+  height: 40px;
+  background-color: var(--light-bg);
+  border: 2px solid var(--primary-black);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: var(--primary-black);
+}
+
+.profile-icon:hover {
+  background-color: var(--primary-black);
+  color: var(--white);
+}
+
+/* Mobile Menu Icon */
 .menu-icon {
   display: none;
   flex-direction: column;
   gap: 5px;
   cursor: pointer;
-}
-
-.menu-icon span {
-  width: 25px;
-  height: 2px;
-  background-color: var(--primary-black);
+  color: var(--primary-black);
   transition: all 0.3s ease;
 }
+
+/* ============ LOGIN MODAL ============ */
+
+.login-modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2000;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(5px);
+}
+
+.login-modal-overlay.active {
+  display: flex;
+}
+
+.login-modal {
+  background-color: var(--white);
+  padding: 3rem;
+  border-radius: 2px;
+  max-width: 400px;
+  width: 90%;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.close-login {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--primary-black);
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-login:hover {
+  color: var(--gold);
+}
+
+.login-modal h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: var(--primary-black);
+  letter-spacing: 0.5px;
+}
+
+.login-modal form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.login-modal input {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid var(--border-light);
+  border-radius: 0;
+  font-size: 0.95rem;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  background-color: var(--light-bg);
+}
+
+.login-modal input:focus {
+  outline: none;
+  border-color: var(--gold);
+  background-color: var(--white);
+}
+
+.modal-submit-btn {
+  background-color: var(--primary-black);
+  color: var(--white);
+  border: 2px solid var(--primary-black);
+  padding: 1rem;
+  border-radius: 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.modal-submit-btn:hover {
+  background-color: var(--white);
+  color: var(--primary-black);
+}
+
+.modal-text {
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-dark);
+  margin-top: 1.5rem;
+}
+
+.modal-text a {
+  color: var(--gold);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.modal-text a:hover {
+  text-decoration: underline;
+}
+
+/* ============ RESPONSIVE ============ */
 
 /* Tablet (768px and below) */
 @media (max-width: 768px) {
   .header-container {
     padding: 1rem clamp(1rem, 5vw, 2rem);
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .logo {
+    gap: 0.5rem;
+    flex: 1;
+    justify-content: center;
+  }
+
+  .logo-image {
+    height: 35px;
+  }
+
+  .logo-text {
+    display: none;
+  }
+
+  .brand-name-mobile {
+    display: block;
   }
 
   .nav-menu {
@@ -151,6 +394,7 @@
 
   .menu-icon {
     display: flex;
+    ml-auto;
   }
 
   .nav-menu a {
@@ -161,20 +405,65 @@
     padding: 0.7rem 1.2rem;
     font-size: 0.85rem;
   }
+
+  .login-btn {
+    display: none;
+  }
+
+  .header-actions {
+    gap: 1rem;
+    order: 3;
+  }
 }
 
 /* Mobile (480px and below) */
 @media (max-width: 480px) {
   .header-container {
     padding: 0.8rem 1rem;
+    gap: 0.5rem;
   }
 
-  .logo-text {
-    display: none;
+  .logo-image {
+    height: 30px;
+  }
+
+  .brand-name-mobile {
+    font-size: 0.9rem;
+  }
+
+  .profile-icon {
+    width: 32px;
+    height: 32px;
+    border-width: 1px;
+  }
+
+  .menu-icon {
+    width: 24px;
+    height: 24px;
+    min-width: 30px;
+    min-height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .donate-btn {
     padding: 0.6rem 0.9rem;
     font-size: 0.75rem;
+  }
+
+  .logout-btn {
+    padding: 0.6rem 0.9rem;
+    font-size: 0.75rem;
+  }
+
+  .login-modal {
+    padding: 2rem;
+    width: 95%;
+  }
+
+  .login-modal h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
   }
 }
