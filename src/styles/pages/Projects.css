@@ -1,0 +1,244 @@
+/* ============================================
+   PROJECTS PAGE STYLES
+   ============================================ */
+
+.projects-page {
+  min-height: 100vh;
+  background-color: var(--white);
+  padding-top: 70px;
+}
+
+.back-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: transparent;
+  border: 1px solid var(--border-light);
+  color: var(--primary-black);
+  padding: 0.6rem 1rem;
+  margin: 2rem clamp(1rem, 5vw, 3rem);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.back-btn:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+.projects-header {
+  text-align: center;
+  padding: clamp(2rem, 5vw, 3rem) clamp(1rem, 5vw, 3rem);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.projects-header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 6vw, 3.5rem);
+  color: var(--primary-black);
+  margin-bottom: 1rem;
+}
+
+.projects-header p {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: var(--text-dark);
+}
+
+.projects-grid {
+  max-width: 1200px;
+  margin: 0 auto clamp(3rem, 8vw, 5rem);
+  padding: 0 clamp(1rem, 5vw, 3rem);
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: clamp(2rem, 4vw, 3rem);
+}
+
+.project-card {
+  background-color: var(--white);
+  border: 1px solid var(--border-light);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.project-image {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  background-color: #f5f5f5;
+}
+
+.project-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-image img {
+  transform: scale(1.05);
+}
+
+.project-content {
+  padding: clamp(1.5rem, 3vw, 2rem);
+  display: flex;
+  flex-direction: column;
+}
+
+.project-content h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  color: var(--primary-black);
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+}
+
+.project-description {
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+  flex: 1;
+}
+
+.project-impact {
+  margin-bottom: 1.5rem;
+}
+
+.impact-badge {
+  background-color: #f5f5f5;
+  padding: 0.5rem 1rem;
+  border-radius: 2px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  display: inline-block;
+}
+
+.progress-section {
+  margin-bottom: 1.5rem;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background-color: #e8e8e8;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--gold) 0%, #d4a537 100%);
+  transition: width 0.3s ease;
+}
+
+.progress-text {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: #666;
+  font-weight: 600;
+}
+
+.donate-project-btn {
+  background-color: var(--primary-black);
+  color: var(--white);
+  border: 2px solid var(--primary-black);
+  padding: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.donate-project-btn:hover {
+  background-color: var(--gold);
+  border-color: var(--gold);
+  color: var(--primary-black);
+}
+
+/* ============ STATS SECTION ============ */
+
+.project-stats {
+  background: linear-gradient(135deg, var(--primary-black) 0%, #2a2a2a 100%);
+  color: var(--white);
+  padding: clamp(3rem, 8vw, 5rem) clamp(1rem, 5vw, 3rem);
+  text-align: center;
+}
+
+.project-stats h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+  margin-bottom: clamp(2rem, 5vw, 3rem);
+  color: var(--gold);
+}
+
+.stats-overview {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: clamp(2rem, 4vw, 3rem);
+}
+
+.stat {
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.stat h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+}
+
+.stat p {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* ============ RESPONSIVE ============ */
+
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-overview {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .project-card {
+    margin-bottom: 1rem;
+  }
+
+  .stats-overview {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .stat {
+    padding: 1.5rem;
+  }
+
+  .stat h3 {
+    font-size: 1.5rem;
+  }
+}

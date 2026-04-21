@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { FiMenu, FiX, FiUser, FiShoppingBag } from 'react-icons/fi';
 import '../styles/Header.css';
 
-const Header = () => {
+const Header = ({ setCurrentPage, currentPage }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [loginOpen, setLoginOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -14,7 +14,8 @@ const Header = () => {
     setMenuOpen(!menuOpen);
   };
 
-  const handleNavClick = () => {
+  const handleNavClick = (page) => {
+    setCurrentPage(page);
     setMenuOpen(false);
   };
 
@@ -49,19 +50,20 @@ const Header = () => {
               src="/logos/logo-main.png" 
               alt="Beyond the Cycle Logo" 
               className="logo-image"
+              onClick={() => handleNavClick('home')}
+              style={{ cursor: 'pointer' }}
             />
-            <span className="logo-text">Beyond the Cycle</span>
-            <span className="brand-name-mobile">Beyond the Cycle</span>
+            <span className="logo-text" onClick={() => handleNavClick('home')} style={{ cursor: 'pointer' }}>Beyond the Cycle</span>
+            <span className="brand-name-mobile" onClick={() => handleNavClick('home')} style={{ cursor: 'pointer' }}>Beyond the Cycle</span>
           </div>
           
           <nav className={`nav-menu ${menuOpen ? 'active' : ''}`}>
-            <a href="#home" onClick={handleNavClick}>Home</a>
-            <a href="#about" onClick={handleNavClick}>About Us</a>
-            <a href="#programs" onClick={handleNavClick}>Programs</a>
-            <a href="#shop" onClick={handleNavClick}>Shop</a>
-            <a href="#resources" onClick={handleNavClick}>Resources</a>
-            <a href="#contact" onClick={handleNavClick}>Contact</a>
-            <button className="donate-btn" onClick={handleNavClick}>DONATE NOW</button>
+            <a href="#home" onClick={() => handleNavClick('home')}>Home</a>
+            <a href="#about" onClick={() => handleNavClick('about')}>About Us</a>
+            <a href="#projects" onClick={() => handleNavClick('projects')}>Projects</a>
+            <a href="#shop" onClick={() => handleNavClick('shop')}>Shop</a>
+            <a href="#contact" onClick={() => handleNavClick('home')}>Contact</a>
+            <button className="donate-btn" onClick={() => handleNavClick('donate')}>DONATE NOW</button>
             {isLoggedIn && (
               <button className="logout-btn" onClick={handleLogout}>LOGOUT</button>
             )}

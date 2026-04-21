@@ -1,0 +1,251 @@
+/* ============================================
+   HOME PAGE STYLES
+   ============================================ */
+
+.home-page {
+  width: 100%;
+}
+
+.main-content {
+  margin-top: 70px;
+}
+
+/* ============ IMPACT STATS SECTION ============ */
+
+.impact-stats {
+  padding: clamp(4rem, 10vw, 8rem) clamp(1.5rem, 5vw, 4rem);
+  background: linear-gradient(135deg, #f9f9f9 0%, #f5f5f5 100%);
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.stats-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.stats-container .section-title {
+  text-align: center;
+  margin-bottom: clamp(2rem, 5vw, 4rem);
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: var(--primary-black);
+  letter-spacing: 2px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: clamp(2rem, 4vw, 3rem);
+}
+
+.stat-card {
+  background-color: var(--white);
+  padding: clamp(2rem, 4vw, 3rem);
+  text-align: center;
+  border: 1px solid var(--border-light);
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--gold);
+  box-shadow: 0 10px 30px rgba(212, 175, 55, 0.15);
+}
+
+.stat-number {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  font-weight: 700;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-family: 'Lato', sans-serif;
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  color: var(--text-dark);
+  letter-spacing: 0.5px;
+}
+
+/* ============ MERCH PREVIEW SECTION ============ */
+
+.merch-preview {
+  padding: clamp(4rem, 10vw, 8rem) clamp(1.5rem, 5vw, 4rem);
+  background-color: var(--white);
+}
+
+.merch-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.merch-container .section-title {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.merch-subtitle {
+  text-align: center;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: var(--text-dark);
+  margin-bottom: clamp(2rem, 5vw, 3rem);
+}
+
+.merch-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  margin-bottom: clamp(2rem, 5vw, 3rem);
+}
+
+.merch-card {
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.merch-card:hover {
+  transform: scale(1.05);
+}
+
+.merch-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.merch-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.merch-card p {
+  font-size: 0.9rem;
+  color: var(--gold);
+}
+
+.view-shop-btn {
+  display: block;
+  margin: 0 auto;
+  background-color: var(--primary-black);
+  color: var(--white);
+  border: 2px solid var(--primary-black);
+  padding: clamp(0.8rem, 1.5vw, 1rem) clamp(1.5rem, 3vw, 2.5rem);
+  font-size: clamp(0.9rem, 1vw, 1rem);
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+  border-radius: 0;
+  transition: all 0.3s ease;
+}
+
+.view-shop-btn:hover {
+  background-color: var(--gold);
+  border-color: var(--gold);
+  color: var(--primary-black);
+}
+
+/* ============ MAIN CTA SECTION ============ */
+
+.main-cta {
+  padding: clamp(4rem, 10vw, 8rem) clamp(1.5rem, 5vw, 4rem);
+  background: linear-gradient(135deg, var(--primary-black) 0%, #2a2a2a 100%);
+  color: var(--white);
+  text-align: center;
+}
+
+.cta-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cta-content h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  margin-bottom: 1rem;
+  color: var(--gold);
+}
+
+.cta-content p {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  margin-bottom: clamp(2rem, 5vw, 3rem);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.cta-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: clamp(1rem, 2vw, 1.5rem);
+}
+
+.cta-donate,
+.cta-shop,
+.cta-projects {
+  padding: clamp(0.9rem, 1.5vw, 1.1rem) clamp(1rem, 2vw, 1.5rem);
+  font-size: clamp(0.85rem, 0.95vw, 0.95rem);
+  font-weight: 700;
+  letter-spacing: 1px;
+  border: 2px solid var(--gold);
+  background-color: transparent;
+  color: var(--gold);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 0;
+}
+
+.cta-donate:hover,
+.cta-shop:hover,
+.cta-projects:hover {
+  background-color: var(--gold);
+  color: var(--primary-black);
+}
+
+/* ============ RESPONSIVE ============ */
+
+@media (max-width: 768px) {
+  .impact-stats {
+    padding: 3rem clamp(1rem, 3vw, 2rem);
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  .merch-preview {
+    padding: 3rem clamp(1rem, 3vw, 2rem);
+  }
+
+  .main-cta {
+    padding: 3rem clamp(1rem, 3vw, 2rem);
+  }
+
+  .cta-buttons {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .stat-card {
+    padding: 1.5rem;
+  }
+
+  .stat-number {
+    font-size: 1.8rem;
+  }
+
+  .merch-preview-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-buttons {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+}

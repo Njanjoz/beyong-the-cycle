@@ -3,18 +3,7 @@
 import React from 'react';
 import '../styles/Hero.css';
 
-const Hero = () => {
-  const handleDonate = () => {
-    window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
-  };
-
-  const handleLearnMore = () => {
-    const aboutSection = document.getElementById('about');
-    if (aboutSection) {
-      aboutSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
+const Hero = ({ setCurrentPage }) => {
   return (
     <section className="hero" id="home">
       <div className="hero-content">
@@ -23,8 +12,8 @@ const Hero = () => {
         <p className="hero-subtitle">Building a World of Strength and Safety</p>
         
         <div className="hero-cta-buttons">
-          <button className="cta-primary" onClick={handleDonate}>Donate Now</button>
-          <button className="cta-secondary" onClick={handleLearnMore}>Learn More</button>
+          <button className="cta-primary" onClick={() => setCurrentPage('donate')}>Donate Now</button>
+          <button className="cta-secondary" onClick={() => setCurrentPage('about')}>Learn More</button>
         </div>
       </div>
     </section>
